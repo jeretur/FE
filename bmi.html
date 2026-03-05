@@ -1,6 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <script>
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        // Ei kirjautunut → ohjataan login-sivulle
+        window.location.href = "login.html";
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -12,84 +20,90 @@
     />
   </head>
   <body>
-
-        <nav>
+    <nav>
       <ul>
-        <li><a href="index.html" id="logo"><img
-          src="/images/pulselogo.png"
-          alt="Pulselogo"
-          class="fl nav-inside"
-        /></a></li>
         <li>
-          <!-- <a href="./bmi/" class="navlink">BMI laskuri</a> -->
-          <a href="bmi.html" class="navlink">BMI laskuri</a>
+          <a href="index.html" id="logo"
+            ><img
+              src="/images/pulselogo.png"
+              alt="Pulselogo"
+              class="fl nav-inside"
+          /></a>
         </li>
         <li>
-          <a href="" class="navlink">Yhteystiedot</a>
+          <a href="" class="navlink">Exercises</a>
         </li>
       </ul>
       <span class="header-links"></span>
+      <div class="user-menu">
+        <div class="user-name">Hey <span class="username"></span> ▾</div>
+
+        <div class="dropdown">
+          <a href="">Profile</a>
+          <a href="">Exercises</a>
+          <a href="#" id="logout">Log out</a>
+        </div>
+      </div>
     </nav>
 
     <div class="card">
       <img src="bmi.jpeg" alt="BMI Index chart" style="width: 100%" />
-      <h1>Painoindeksilaskuri / BMI-laskuri</h1>
+      <h1>BMI Calculator</h1>
       <p class="title">
-        Painoindeksilaskurilla voit laskea pituuden ja painon perustella
-        painoindeksin (BMI, Body Mass Index).
+        With the BMI calculator you can calculate your Body Mass Index (BMI)
+        based on your height and weight.
       </p>
 
       <form action="">
-        <label for="fname">Anna painosi:</label><br />
+        <label for="fname">Enter your weight:</label><br />
         <input
           type="text"
           id="weight"
           name="fname"
-          value = ""
+          value=""
           placeholder="kg"
         /><br />
-        <label for="lname">Anna pituutesi:</label><br />
+        <label for="lname">Enter your height:</label><br />
         <input
           type="text"
           id="height"
           name="lname"
-          value = ""
+          value=""
           placeholder="cm"
         /><br /><br />
       </form>
 
-      <button class="btn calculate">Laske indeksi</button>
+      <button class="btn calculate">Calculate BMI</button>
 
       <section class="result">
-        <p>💯 Mittaustuloksesi: <span class="bmi-score">0</span></p>
+        <p>💯 Your result: <span class="bmi-score">0</span></p>
         <p>
-          〽️ Analyysi:
-          <span class="analysis">Tähän saat analyysin BMI tuloksestasi</span>
+          〽️ Analysis:
+          <span class="analysis">Your BMI analysis will appear here</span>
         </p>
-
-        <p>🥇 Matalin BMI: <span class="highscore">0</span></p>
       </section>
 
       <section class="bmi-table">
         <table id="bmiTbl" class="table table-bordered">
           <tbody>
             <tr class="bmi0-19">
-              <td>Alipaino</td>
-              <td>0 - 18,9</td>
+              <td>Underweight</td>
+              <td>0 - 18.9</td>
             </tr>
             <tr class="bmi19-25">
-              <td>Normaali paino</td>
-              <td>19 - 24,9</td>
+              <td>Normal weight</td>
+              <td>19 - 24.9</td>
             </tr>
             <tr class="bmi25-30">
-              <td>Ylipaino</td>
-              <td>25,0 - 40,0 tai enemmän</td>
+              <td>Overweight</td>
+              <td>25.0 - 40.0 or more</td>
             </tr>
           </tbody>
         </table>
       </section>
     </div>
-    <div id ="example"></div>
+    <div id="example"></div>
     <script src="bmi.js"></script>
+    <script type="module" src="loggedUser.js"></script>
   </body>
 </html>

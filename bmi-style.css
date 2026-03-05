@@ -1,7 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --orange: #ffa600;
+  --light: #f3fffb;
+  --dark: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",sans-serif;
+
+  background-image:
+    linear-gradient(rgba(200, 200, 200, 0.88), rgba(200, 200, 200, 0.88)),
+    url("../images/zyzz.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex; /* Flex container */
+  flex-direction: column; /* Stack header + main + footer */
+  min-height: 100vh; /* Full viewport height */
 }
+
+
+.nav-bar {
+  position: relative;
+}
+nav {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0.5rem 4rem;
+  height: 100px;
+  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.user-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-name {
+  font-weight: bold;
+  color: var(--orange); /* Monster green */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  min-width: 100px;
+  z-index: 9999;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+}
+
+.dropdown a:hover {
+  background: #f2f2f2;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-inside {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 40px;
+}
+
+nav ul a {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--dark);
+  padding: 0.6rem 0.9rem;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--orange);
+}
+
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -9,82 +120,7 @@ body {
   margin: 50px auto;
   /* text-align: center; */
   padding: 30px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  background-color: rgb(92, 88, 88);
-  padding: 0.5rem 4rem;
-  height: 100px;
-  box-shadow: 0 8px 16px -6px black;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  padding-top: 0;  
-}
-
-.fl {
-  float: none;
-}
-
-
-a {
-  text-decoration: none;
-}
-
-.nav-inside {
-  height: 130px;        /* ← main change */
-  width: auto;
-  object-fit: contain;
-  margin-right: 40px;
-}
-
-
-/* Logon erityis liukuväri */
-
-nav ul li:first-child a {
-  /* Fallback: Set a background color. */
-  background-color: rgb(159, 65, 114);
-
-  /* Create the gradient. */
-  /* background-image: linear-gradient(45deg, #f3ec78, #af4261);*/
-  background-image: linear-gradient(45deg, rgb(216, 86, 101), rgb(71, 159, 65));
-
-  /* Set the background size and repeat properties. */
-  background-size: 100%;
-  background-repeat: repeat;
-
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  font-size: larger;
-  font-family: "Roboto Slab", serif;
-  font-weight: 900;
-  margin-right: 40px;
-}
-
-nav ul a {
-  font-size: 1.05rem;  
-  font-weight: 400;   
-  color: rgb(197, 197, 197);
-  padding: 0.6rem 0.9rem;
-  transition: color 0.3s;
-}
-
-
-nav ul li {
-  float: none;
-}
-nav ul li a:hover {
-  color: rgb(231, 198, 54);
+  background-color: #f3fffb;
 }
 
 .title {
@@ -119,13 +155,6 @@ input[type=text], select {
   opacity: 0.7;
 }
 
-/* .result > p {
-  font-weight: bolder;
-}
-
-span {
-  font-weight: normal;
-} */
 
 tbody {
   background-color: #fff;
@@ -144,4 +173,55 @@ td {
 }
 .highBmi {
   background-color: rgb(244, 148, 30);
+}
+
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 0.5rem 2rem;
+  }
+
+  .nav-inside {
+    height: 100px;
+    margin-right: 20px;
+  }
+
+  nav ul a {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inside {
+    margin-top: 5px;
+    height: 90px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  nav ul a {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  #info-text {
+    font-size: 1.2em;
+  }
+
+  .about-us {
+    padding: 40px 10%;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-inside {
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  #info-text {
+    font-size: 1.1em;
+  }
 }

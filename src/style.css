@@ -64,7 +64,9 @@ main {
 
 /********************************/
 /* Navigation */
-
+.nav-bar {
+  position: relative;
+}
 nav {
   display: flex;
   align-items: center;
@@ -85,6 +87,45 @@ nav ul {
 .username {
   margin-right: 20px;
 }
+
+.user-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-name {
+  font-weight: bold;
+  color: var(--orange); /* Monster green */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  min-width: 100px;
+  z-index: 9999;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+}
+
+.dropdown a:hover {
+  background: #f2f2f2;
+}
+
+.dropdown.show {
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
