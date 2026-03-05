@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --orange: #ffa600;
+  --light: #f3fffb;
+  --dark: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =====================
+   BODY (Monster theme + sticky footer)
+===================== */
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  color: var(--dark);
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+    url("../images/conor.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex; /* Flex container */
+  flex-direction: column; /* Stack header + main + footer */
+  min-height: 100vh; /* Full viewport height */
+}
+
+main {
+  flex: 1; /* Take all available vertical space */
+}
+
+/*********************/
+/* Utility classes */
+
+.bolder {
+  font-weight: bolder;
+}
+
+.main_cl {
+  color: var(--orange);
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+/********************************/
+/* Navigation */
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0.5rem 4rem;
+  height: 100px;
+  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.username {
+  margin-right: 20px;
+}
+a {
+  text-decoration: none;
+}
+
+.nav-inside {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 40px;
+}
+
+nav ul a {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--dark);
+  padding: 0.6rem 0.9rem;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--orange);
+}
+
+/*********************/
+/* Info section */
+
+.info-area {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+#info-text {
+  text-align: center;
+  font-size: 1.5em;
+  opacity: 0; /* start invisible */
+  transform: translateY(30px); /* start slightly below */
+  animation: popUp 1s forwards; /* run animation */
+  animation-delay: 0.5s; /* delay before appearing */
+}
+
+/* Highlighted Pulse text */
+#info-text .main_cl {
+  font-weight: 400;
+  text-shadow:
+    0 0 10px #ff9100,
+    0 0 20px #3ddc97;
+}
+
+/* Animation keyframes */
+@keyframes popUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*********************/
+/* About section */
+
+.about-us {
+  opacity: 0; /* start invisible */
+  transform: translateY(30px); /* start slightly below */
+  animation: popUpAbout 1s forwards; /* run animation */
+  animation-delay: 1s; /* appear after info section */
+  color: var(--monster-dark); /* ensure readability */
+  background-color: var(--light);
+  background-position: right;
+  background-size: cover;
+  padding: 80px;
+  color: var(--dark);
+  margin-top: 50px;
+  text-align: center;
+}
+
+.about-us p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+@keyframes popUpAbout {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*********************/
+/* Footer (sticky) */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--dark);
+  color: white;
+}
+
+/*********************/
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 0.5rem 2rem;
+  }
+
+  .nav-inside {
+    height: 100px;
+    margin-right: 20px;
+  }
+
+  nav ul a {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inside {
+    margin-top: 5px;
+    height: 90px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  nav ul a {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  #info-text {
+    font-size: 1.2em;
+  }
+
+  .about-us {
+    padding: 40px 10%;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-inside {
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  #info-text {
+    font-size: 1.1em;
+  }
+}

@@ -1,0 +1,4 @@
+.diary-card-area {
+  display: flex;
+  flex-wrap: wrap;
+}
