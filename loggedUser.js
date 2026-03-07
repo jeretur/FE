@@ -17,6 +17,8 @@ userName.addEventListener("click", () => {
   dropdown.classList.toggle("show");
 });
 
+
+// Log out // 
 document.getElementById("logout").addEventListener("click", () => {
   localStorage.removeItem("loggedInUser");
   localStorage.removeItem("token");

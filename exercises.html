@@ -14,6 +14,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exercise.css" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
@@ -51,55 +52,66 @@
           <!-- <a href="./bmi/" class="navlink">BMI laskuri</a> -->
           <a href="bmi.html" class="navlink">BMI</a>
         </li>
-        <li>
-          <a href="exercises.html" class="navlink">Exercises</a>
-        </li>
       </ul>
       <span class="header-links"></span>
-      
-  <div class="user-menu">
-  <div class="user-name">
-    Hei <span class="username"></span> ▾
-  </div>
 
-  <div class="dropdown">
-    <a href="profile.html">Profile</a>
-    <a href="#" id="logout">Log out</a>
-  </div>
-</div>
+      <div class="user-menu">
+        <div class="user-name">Hei <span class="username"></span> ▾</div>
+
+        <div class="dropdown">
+          <a href="">Profile</a>
+          <a href="">Exercises</a>
+          <a href="#" id="logout">Log out</a>
+        </div>
+      </div>
     </nav>
 
-    <!-- Main area with infotext and menus -->
+    <div class="card">
+      <form class="exerciseForm">
 
-    <main>
-      <section class="info-area" id="info">
-        <div id="info-text">
-          How
-          <span class="main_cl">Pulse</span>
-          helps you track your wellness
-        </div>
-      </section>
+        <label for="Entrydate">Entry date</label>
+        <input type="text" name="entrydate" placeholder="2026-02-04" value="" />
 
-      <section class="about-us" id="contact">
-        <h2 class="black_cl bolder mb-10">OUR STORY</h2>
-        <p>
-          We believe in the power of personalized workout programs to transform
-          your health and fitness.
-        </p>
-        <p>
-          Our platform lets you track your well-being, monitor progress, and
-          optimize your training with clear insights. 
-        </p>
-        <p>By following structured
-          programs and keeping track of your personal wellness, you can achieve
-          your fitness goals more effectively and safely</p>
-        <p>
-          Stay consistent, train smart, and take control of your health — your progress starts here.
-        </p>
-      </section>
-    </main>
-    <footer></footer>
+        <label for="Mood">Mood</label>
+        <input type="text" name="mood" placeholder="Good" value="" />
+
+        <label for="Weight">Weight</label>
+        <input type="text" name="weight" placeholder="50-150" value="" />
+
+        <label for="Sleep">Sleep</label>
+        <input type="text" name="sleep_hours" placeholder="0-24" value="" />
+
+        <label for="Notes">Notes</label>
+        <input type="text" name="notes" placeholder="Optional" value="" />
+
+        <input
+          name="submit"
+          type="submit"
+          value="Continue"
+          class="exerciseForm"
+        />
+      </form>
+
+        <form class="nextForm" style="display: none;">
+            <!--type duration intensity-->
+        <label for="Type">Type</label>
+        <input type="text" name="type" placeholder="chest day" value="" />
+
+        <label for="Duration">Duration</label>
+        <input type="text" name="duration" placeholder="50" value="" />
+
+        <label for="Intensity">Intensity</label>
+        <input type="text" name="intensity" placeholder="1-10" value="" />
+        <input
+          name="submit"
+          type="submit"
+          value="Submit"
+          class="nextForm"
+        />
+        </form>
+      <div id="exerciseResponse"></div>  
+    </div>
   </body>
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="exercise.js"></script>
   <script type="module" src="loggedUser.js"></script>
 </html>

@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --orange: #ffa600;
+  --light: #f3fffb;
+  --dark: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =====================
+   BODY (Monster theme + sticky footer)
+===================== */
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  color: var(--dark);
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+    url("../images/zyzz.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex; /* Flex container */
+  flex-direction: column; /* Stack header + main + footer */
+  min-height: 100vh; /* Full viewport height */
+}
+
+main {
+  flex: 1; /* Take all available vertical space */
+}
+
+/*********************/
+/* Utility classes */
+
+.bolder {
+  font-weight: bolder;
+}
+
+.main_cl {
+  color: var(--orange);
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+/********************************/
+/* Navigation */
+.nav-bar {
+  position: relative;
+}
+nav {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0.5rem 4rem;
+  height: 100px;
+  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.username {
+  margin-right: 20px;
+}
+
+.user-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-name {
+  font-weight: bold;
+  color: var(--orange); /* Monster green */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  min-width: 100px;
+  z-index: 9999;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+}
+
+.dropdown a:hover {
+  background: #f2f2f2;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-inside {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 40px;
+}
+
+nav ul a {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--dark);
+  padding: 0.6rem 0.9rem;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--orange);
+}
+
+/*********************/
+/* Info section */
+
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 200px auto;
+  padding: 30px;
+  background-color: #f3fffb;
+}
+
+/*********************/
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 0.5rem 2rem;
+  }
+
+  .nav-inside {
+    height: 100px;
+    margin-right: 20px;
+  }
+
+  nav ul a {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inside {
+    margin-top: 5px;
+    height: 90px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  nav ul a {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  #info-text {
+    font-size: 1.2em;
+  }
+
+  .about-us {
+    padding: 40px 10%;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-inside {
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  #info-text {
+    font-size: 1.1em;
+  }
+}
