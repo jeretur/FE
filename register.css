@@ -20,7 +20,6 @@ body {
 }
 
 .card {
-
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 500px;
   margin: 200px auto;
@@ -33,14 +32,15 @@ h2 {
   font-weight: 400;
   font-style: normal;
 }
-.loginForm input {
+
+.registerForm input {
   width: 100%;
   font-size: 1em;
   cursor: pointer;
   margin-top: 5px;
 }
 
-.loginForm input[type="submit"] {
+.registerForm input[type="submit"] {
   display: block;
   width: 101.6%; /* sama kuin tekstikentillä */
   margin-top: 10px; /* vain väli edellisen kentän kanssa */
@@ -51,50 +51,28 @@ h2 {
   padding: 5px;
 }
 
-.loginForm input[value="Login"] {
+.registerForm input[value="Register"] {
   color: var(--dark);
   font-weight: bold;
   font-family: "Audiowide", sans-serif;
 }
 
-.loginForm input:hover[type="submit"] {
+.registerForm input:hover[type="submit"] {
   color: white;
   transition: all 0.3s;
 }
-
-#CreateAccount {
-  width: fit-content;
+.back {
   text-decoration: none;
-  display: block;
-  text-align: center;
-  margin: 20px auto;
-  font-size: 0.9rem;
-  font-weight: 400;
   color: var(--dark);
-  transition: all 0.3s;
-}
-
-#CreateAccount:hover {
-  color: var(--orange);
-}
-
-#ForgotPassword {
-  width: fit-content;
-  text-decoration: none;
+  font-weight: bold;
+  text-align: right;
   display: block;
-  text-align: center;
-  margin: auto;
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--dark);
-  padding: 0.6rem 0.9rem;
 }
 
-#loginResponse {
-  color: red;
+.registerForm input:valid {
+    border-left-color: rgb(0, 255, 0);
 }
 
-p {
-  font-size: 0.7rem;
-  text-align: center;
+.registerForm input:invalid {
+    border-left-color: red;
 }
