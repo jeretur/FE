@@ -136,13 +136,22 @@ const nextForm = async (event) => {
   // Hae data
   const response = await fetchData(url, options);
 
-  if (response.message) {
+if (response.message) {
     responseDiv.textContent = "Exercise saved.";
+    
+    // Emit custom event for profile.html to listen to
+    window.dispatchEvent(new Event("exerciseAdded"));
+    
     setTimeout(function () {
-      window.location.href = "index.html";
+      window.location.href = "profile.html"; // Redirect to profile instead of index
     }, 1000);
   }
 };
+
+
+
+
+
 
 const nextItemForm = document.querySelector(".nextForm");
 const addItemForm = document.querySelector(".exerciseForm");

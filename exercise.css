@@ -29,7 +29,7 @@ body {
 
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
-    url("../images/zyzz.jpg");
+    url("../images/cold.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -161,6 +161,49 @@ nav ul li a:hover {
   background-color: #f3fffb;
 }
 
+.exerciseForm input {
+  width: 100%;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.exerciseForm input[type="submit"] {
+  display: block; /* sama kuin tekstikentillä */
+  margin-top: 10px; /* vain väli edellisen kentän kanssa */
+  cursor: pointer;
+  background-color: var(--orange);
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.exerciseForm input:hover[type="submit"] {
+  color: white;
+  transition: all 0.3s;
+}
+
+.nextForm input {
+  width: 100%;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.nextForm input[type="submit"] {
+  display: block; /* sama kuin tekstikentillä */
+  margin-top: 10px; /* vain väli edellisen kentän kanssa */
+  cursor: pointer;
+  background-color: var(--orange);
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.nextForm input:hover[type="submit"] {
+  color: white;
+  transition: all 0.3s;
+}
 /*********************/
 /* Responsive styles */
 

@@ -16,8 +16,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* =====================
+   BODY (Monster theme + sticky footer)
+===================== */
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  color: var(--dark);
 
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
@@ -31,7 +39,31 @@ body {
   min-height: 100vh; /* Full viewport height */
 }
 
+main {
+  flex: 1; /* Take all available vertical space */
+}
 
+/*********************/
+/* Utility classes */
+
+.bolder {
+  font-weight: bolder;
+}
+
+.main_cl {
+  color: var(--orange);
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+/********************************/
+/* Navigation */
 .nav-bar {
   position: relative;
 }
@@ -52,6 +84,10 @@ nav ul {
   margin: 0;
 }
 
+.username {
+  margin-right: 20px;
+}
+
 .user-menu {
   position: relative;
   cursor: pointer;
@@ -69,7 +105,7 @@ nav ul {
   right: 0;
   background: white;
   border-radius: 6px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   min-width: 100px;
   z-index: 9999;
 }
@@ -113,115 +149,23 @@ nav ul li a:hover {
   color: var(--orange);
 }
 
+/*********************/
+/* Info section */
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 500px;
   margin: 50px auto;
-  /* text-align: center; */
+
+  flex: 1; /* equal width */
+  margin: 0; /* no external spacing */
   padding: 30px;
   background-color: #f3fffb;
 }
 
-.title {
-  color: grey;
-  font-size: 18px;
+.history-row {
+  display: flex;
+  border-bottom: 1px solid #ddd; /* optional separator */
 }
-
-input[type=text], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.btn {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.btn:hover, a:hover {
-  opacity: 0.7;
-}
-
-
-tbody {
-  background-color: #fff;
-}
-
-td {
-  border: 1px solid #ddd;
-  padding: 5px;
-}
-
-.lowBmi {
-  background-color: rgb(71, 178, 210);
-}
-.normalBmi {
-  background-color: rgb(112, 223, 112);
-}
-.highBmi {
-  background-color: rgb(244, 148, 30);
-}
-
-
-@media (max-width: 1024px) {
-  nav {
-    padding: 0.5rem 2rem;
-  }
-
-  .nav-inside {
-    height: 100px;
-    margin-right: 20px;
-  }
-
-  nav ul a {
-    font-size: 1rem;
-    padding: 0.5rem 0.7rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-inside {
-    margin-top: 5px;
-    height: 90px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-  }
-
-  nav ul a {
-    font-size: 0.95rem;
-    padding: 0.4rem 0.6rem;
-  }
-
-  #info-text {
-    font-size: 1.2em;
-  }
-
-  .about-us {
-    padding: 40px 10%;
-    font-size: 0.95em;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-inside {
-    height: 70px;
-    margin-bottom: 10px;
-  }
-
-  #info-text {
-    font-size: 1.1em;
-  }
+.history-col {
+  flex: 1;
+  padding: 1rem;
 }
