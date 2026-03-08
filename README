@@ -1,0 +1,46 @@
+
+# README
+Projektin kuvaus
+
+Tämä projekti on Node.js ja Express -pohjainen web-sovelluksen backend. Sovellus tarjoaa REST API:n, jonka avulla voidaan hallita käyttäjiä sekä entry-tietoja.
+
+Sovellus käyttää MySQL-tietokantaa datan tallentamiseen ja toteuttaa käyttäjien autentikoinnin JWT-tokenien avulla. Salasanojen käsittelyssä käytetään bcryptjs-kirjastoa turvallisuuden parantamiseksi.
+
+Backend tarjoaa rajapinnat, joita frontend (public-kansiossa oleva web-sivu) voi käyttää tietojen hakemiseen, lisäämiseen, muokkaamiseen ja poistamiseen.
+
+
+
+
+
+
+
+## Tietokannan kuvaus
+
+Sovellus käyttää MySQL-tietokantaa, johon muodostetaan yhteys mysql2-kirjaston avulla. Yhteys määritellään tiedostossa:
+
+src/utils/database.js
+
+Tietokantayhteyden asetukset haetaan .env-tiedostosta:
+
+DB_HOST
+DB_USER
+DB_PASSWORD
+DB_NAME
+## Toteutetut toiminnallisuudet
+
+- harjoitusten hakeminen tietokannasta
+
+- uuden harjoituksen lisääminen
+
+- kaikkien päiväkirjamerkintöjen hakeminen profiiliin 
+
+
+## Tunnetut bugit / ongelmat
+
+- Virheenkäsittelyä voisi parantaa joissakin API-endpointeissa.
+
+- Frontend on hyvin yksinkertainen ja toimii lähinnä esimerkkinä API:n käytöstä.
+
+- Validointia voisi lisätä useampiin syötteisiin.
+
+- Profiilin historiassa date on 2026-02-03T22:00:00.000Z 
